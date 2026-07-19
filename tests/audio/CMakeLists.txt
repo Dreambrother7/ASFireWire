@@ -55,6 +55,11 @@ add_audio_test(CIPHeaderBuilderTests
     CIPHeaderBuilderTests.cpp
 )
 
+# MOTU Block Codec Tests
+add_audio_test(MotuBlockCodecTests
+    MotuBlockCodecTests.cpp
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
