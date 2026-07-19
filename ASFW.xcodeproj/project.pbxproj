@@ -446,6 +446,7 @@
 		0E15E59914A4531C4DF4BA41 /* RingHelpers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RingHelpers.hpp; sourceTree = "<group>"; };
 		0E63C96EE7B8535670E083C6 /* PhyCommand.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhyCommand.cpp; sourceTree = "<group>"; };
 		0E9534FDE6EA1C49B6D44A4B /* ASFWAudioDriverLifecycle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ASFWAudioDriverLifecycle.cpp; sourceTree = "<group>"; };
+		0E987A31E158D6E032F10DED /* TascamSurfaceImage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TascamSurfaceImage.hpp; sourceTree = "<group>"; };
 		0EFBB31EBA1674516A0A39D7 /* SBP2CommandWireFormats.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SBP2CommandWireFormats.hpp; sourceTree = "<group>"; };
 		0F1CAA3BCFF0815CDDDCE11A /* TestHooks.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestHooks.hpp; sourceTree = "<group>"; };
 		0FCC9AE9BE1B3929CC94BE88 /* ApogeeDuetProtocol.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ApogeeDuetProtocol.hpp; sourceTree = "<group>"; };
@@ -466,6 +467,7 @@
 		164B3D3E4F3CDD56A801EB18 /* DriverModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModels.swift; sourceTree = "<group>"; };
 		166D6F3ED78445ED40559CF3 /* DiagnosticsHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DiagnosticsHandler.cpp; sourceTree = "<group>"; };
 		168E3080E7C55D54003B176B /* DriverConnector+Duet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DriverConnector+Duet.swift"; sourceTree = "<group>"; };
+		16CC76A97D38E7DB7026181C /* TascamBlockCodec.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TascamBlockCodec.hpp; sourceTree = "<group>"; };
 		16DDC0569C67CA7A13F7A73E /* LocalIRMResourceCSRHandler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LocalIRMResourceCSRHandler.hpp; sourceTree = "<group>"; };
 		16EDC3DB7D3B7CD9AF5384DD /* DiscoveryTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DiscoveryTypes.hpp; sourceTree = "<group>"; };
 		1709C71E68C22BCB9587A585 /* DuplexStreamProfile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DuplexStreamProfile.hpp; sourceTree = "<group>"; };
@@ -834,6 +836,7 @@
 		9174C94EAB9982D5A4A80E2F /* DirectOutputReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DirectOutputReader.hpp; sourceTree = "<group>"; };
 		9177CAE5D0EE3907246E30CA /* RawPcm24In32Encoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RawPcm24In32Encoder.hpp; sourceTree = "<group>"; };
 		91A241F62B4EDD4BD5ABE8C0 /* SelfIDCapture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SelfIDCapture.cpp; sourceTree = "<group>"; };
+		920A19320EFB09888B818DF3 /* TascamBlockLayout.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TascamBlockLayout.hpp; sourceTree = "<group>"; };
 		9226D5E4A667DC6666A68775 /* LocalRequestWiring.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LocalRequestWiring.hpp; sourceTree = "<group>"; };
 		92A978DB3BF673A591C2C119 /* ConfigROMStore.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConfigROMStore.cpp; sourceTree = "<group>"; };
 		933D619AD369377218B53289 /* ResponseSender.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResponseSender.hpp; sourceTree = "<group>"; };
@@ -1704,6 +1707,7 @@
 				8FEAA5E97D34E8168D6984DD /* CIP */,
 				23FF3BFBD4615EA56B53E83D /* IEC61883 */,
 				A7E96D302593CA3F182D2EF4 /* RawPcm24In32 */,
+				FEDD2470C8FAD9AB7CF05364 /* Tascam */,
 			);
 			path = Wire;
 			sourceTree = "<group>";
@@ -2811,6 +2815,16 @@
 				E80D888C09A54D7E579A60E1 /* PlaybackRingRange.hpp */,
 			);
 			path = Runtime;
+			sourceTree = "<group>";
+		};
+		FEDD2470C8FAD9AB7CF05364 /* Tascam */ = {
+			isa = PBXGroup;
+			children = (
+				16CC76A97D38E7DB7026181C /* TascamBlockCodec.hpp */,
+				920A19320EFB09888B818DF3 /* TascamBlockLayout.hpp */,
+				0E987A31E158D6E032F10DED /* TascamSurfaceImage.hpp */,
+			);
+			path = Tascam;
 			sourceTree = "<group>";
 		};
 		FFE33AF080998583B3C9CC0D /* Ports */ = {

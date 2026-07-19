@@ -55,6 +55,11 @@ add_audio_test(CIPHeaderBuilderTests
     CIPHeaderBuilderTests.cpp
 )
 
+# TASCAM Block Codec Tests
+add_audio_test(TascamBlockCodecTests
+    TascamBlockCodecTests.cpp
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
