@@ -772,6 +772,7 @@
 		7892E16293D409FFB4F00710 /* DriverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverViewModel.swift; sourceTree = "<group>"; };
 		791D3F142C8E022EE27500B5 /* ASFWMCPHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASFWMCPHost.swift; sourceTree = "<group>"; };
 		79271072DF7A4A360B26D962 /* SaffireproCommon.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SaffireproCommon.hpp; sourceTree = "<group>"; };
+		799DB9A0D59FDB29876BBB79 /* TascamRegisters.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TascamRegisters.hpp; sourceTree = "<group>"; };
 		7B882FD0DA3D8C7A7845DA54 /* FocusriteSaffireProfile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FocusriteSaffireProfile.cpp; sourceTree = "<group>"; };
 		7BBA739B8653FE3A62D143F8 /* BeBoBProfile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BeBoBProfile.cpp; sourceTree = "<group>"; };
 		7C1F80EB119F3DAC7AA95C43 /* MCPCmpToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPCmpToolsTests.swift; sourceTree = "<group>"; };
@@ -1680,6 +1681,7 @@
 				4D2DB64009F93C974F2DF20F /* DICE */,
 				FD14F207887135CE102F8ACA /* Duplex */,
 				6DF35E1146D265DA8C2B7611 /* Oxford */,
+				8A67A1350228B6FFAD6264E0 /* Tascam */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -2101,6 +2103,14 @@
 				747E8B61F56CFA97DD0187AA /* MetricCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8A67A1350228B6FFAD6264E0 /* Tascam */ = {
+			isa = PBXGroup;
+			children = (
+				799DB9A0D59FDB29876BBB79 /* TascamRegisters.hpp */,
+			);
+			path = Tascam;
 			sourceTree = "<group>";
 		};
 		8FEAA5E97D34E8168D6984DD /* CIP */ = {

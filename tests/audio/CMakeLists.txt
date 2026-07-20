@@ -60,6 +60,11 @@ add_audio_test(TascamBlockCodecTests
     TascamBlockCodecTests.cpp
 )
 
+# TASCAM Register Plane Tests
+add_audio_test(TascamRegisterTests
+    TascamRegisterTests.cpp
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
