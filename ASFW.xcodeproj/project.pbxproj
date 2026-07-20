@@ -485,6 +485,7 @@
 		1EA6572F9CAE63EE61D5A91C /* MusicSubunit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MusicSubunit.hpp; sourceTree = "<group>"; };
 		1F01A2AE881C63197695A0F1 /* DriverConnectorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverConnectorModels.swift; sourceTree = "<group>"; };
 		1FBCE23C33F1D62789320910 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		208109E58F9B4B89D91FCBA5 /* MotuV2Registers.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MotuV2Registers.hpp; sourceTree = "<group>"; };
 		2091230AA237991CD12A881E /* ROMScanSessionDetails.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ROMScanSessionDetails.cpp; sourceTree = "<group>"; };
 		20BC47A83718017AC79BEBDE /* ARPacketParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ARPacketParser.hpp; sourceTree = "<group>"; };
 		21B2F7CD6D1BBFF5031F82F0 /* MCPLogToolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPLogToolsTests.swift; sourceTree = "<group>"; };
@@ -1494,6 +1495,14 @@
 			path = Bus;
 			sourceTree = "<group>";
 		};
+		37AF15EE4187516EA2FDB2CB /* MOTU */ = {
+			isa = PBXGroup;
+			children = (
+				208109E58F9B4B89D91FCBA5 /* MotuV2Registers.hpp */,
+			);
+			path = MOTU;
+			sourceTree = "<group>";
+		};
 		3876883203AF84B6CA0CAE61 /* Snapshot */ = {
 			isa = PBXGroup;
 			children = (
@@ -1679,6 +1688,7 @@
 				B8842CEF92B7443D9129D29B /* BeBoB */,
 				4D2DB64009F93C974F2DF20F /* DICE */,
 				FD14F207887135CE102F8ACA /* Duplex */,
+				37AF15EE4187516EA2FDB2CB /* MOTU */,
 				6DF35E1146D265DA8C2B7611 /* Oxford */,
 			);
 			path = Protocols;

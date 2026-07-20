@@ -60,6 +60,11 @@ add_audio_test(MotuBlockCodecTests
     MotuBlockCodecTests.cpp
 )
 
+# MOTU v2 Register Plane Tests
+add_audio_test(MotuV2RegisterTests
+    MotuV2RegisterTests.cpp
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
