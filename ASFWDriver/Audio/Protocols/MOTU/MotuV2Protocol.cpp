@@ -64,6 +64,17 @@ IOReturn MotuV2Protocol::Initialize() {
 IOReturn MotuV2Protocol::Shutdown() {
     initialized_ = false;
     cachedSampleRateHz_.store(0, std::memory_order_release);
+
+    // Hand the device back to its front panel. Fire-and-forget: Shutdown is synchronous,
+    // and a device that has already gone away cannot be released anyway.
+    if (asyncAddressRegistered_.load(std::memory_order_acquire)) {
+        ReleaseAsyncMessageAddress([](IOReturn status) {
+            if (status != kIOReturnSuccess) {
+                ASFW_LOG(Audio, "MotuV2Protocol: async address release failed: 0x%x", status);
+            }
+        });
+    }
+
     return kIOReturnSuccess;
 }
 
@@ -138,6 +149,59 @@ void MotuV2Protocol::SetSampleRate(uint32_t rateHz, CompletionCallback callback)
                 }
             });
     });
+}
+
+void MotuV2Protocol::WriteAsyncAddrPair(AsyncAddrValues values,
+                                        bool registered,
+                                        CompletionCallback callback) {
+    (void)io_.WriteQuadBE(
+        AddressOf(Reg::AsyncAddrHi),
+        values.hi,
+        [this, values, registered, callback = std::move(callback)](
+            Async::AsyncStatus hiStatus) mutable {
+            const IOReturn hiResult = Protocols::Ports::MapAsyncStatusToIOReturn(hiStatus);
+            if (hiResult != kIOReturnSuccess) {
+                if (callback) {
+                    callback(hiResult);
+                }
+                return;
+            }
+
+            (void)io_.WriteQuadBE(
+                AddressOf(Reg::AsyncAddrLo),
+                values.lo,
+                [this, registered, callback = std::move(callback)](
+                    Async::AsyncStatus loStatus) mutable {
+                    const IOReturn loResult =
+                        Protocols::Ports::MapAsyncStatusToIOReturn(loStatus);
+                    if (loResult == kIOReturnSuccess) {
+                        asyncAddressRegistered_.store(registered, std::memory_order_release);
+                    }
+                    if (callback) {
+                        callback(loResult);
+                    }
+                });
+        });
+}
+
+void MotuV2Protocol::RegisterAsyncMessageAddress(uint16_t hostNodeId,
+                                                 uint64_t hostAddress,
+                                                 CompletionCallback callback) {
+    if (hostAddress < kAsyncMessageRegionStart || hostAddress > kAsyncMessageRegionEnd) {
+        ASFW_LOG(Audio,
+                 "MotuV2Protocol: async address 0x%012llx outside the device's accepted region",
+                 hostAddress);
+        if (callback) {
+            callback(kIOReturnBadArgument);
+        }
+        return;
+    }
+
+    WriteAsyncAddrPair(EncodeAsyncAddr(hostNodeId, hostAddress), true, std::move(callback));
+}
+
+void MotuV2Protocol::ReleaseAsyncMessageAddress(CompletionCallback callback) {
+    WriteAsyncAddrPair(AsyncAddrValues{.hi = 0U, .lo = 0U}, false, std::move(callback));
 }
 
 } // namespace ASFW::Audio::Motu

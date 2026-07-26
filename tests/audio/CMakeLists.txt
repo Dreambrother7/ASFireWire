@@ -70,6 +70,12 @@ add_audio_test(MotuV2ProfileTests
     MotuV2ProfileTests.cpp
 )
 
+# MOTU v2 Protocol Adapter Tests
+add_audio_test(MotuV2ProtocolTests
+    MotuV2ProtocolTests.cpp
+    "${ASFW_DRIVER_DIR}/Audio/Protocols/MOTU/MotuV2Protocol.cpp"
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
