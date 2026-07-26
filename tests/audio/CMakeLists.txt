@@ -65,6 +65,11 @@ add_audio_test(MotuV2RegisterTests
     MotuV2RegisterTests.cpp
 )
 
+# MOTU Device Profile / Factory Identity Tests
+add_audio_test(MotuV2ProfileTests
+    MotuV2ProfileTests.cpp
+)
+
 # Blocking Cadence Tests
 add_audio_test(BlockingCadenceTests
     BlockingCadenceTests.cpp
